@@ -44,9 +44,26 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(currentSlide);
     }
 
+    // Função para mover para o slide anterior
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
     // Inicializa o slide e define o intervalo para mudança automática
     showSlide(currentSlide);
     const slideInterval = setInterval(nextSlide, 3000); // Muda o slide a cada 3 segundos
+
+    // Adicionar eventos de clique nos botões "Próximo" e "Anterior" do carrossel
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        clearInterval(slideInterval); // Pausa o carrossel automático ao clicar
+        nextSlide();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        clearInterval(slideInterval); // Pausa o carrossel automático ao clicar
+        prevSlide();
+    });
 
     // Detecção de toque para navegação manual nos dispositivos móveis
     let xStart = null;
@@ -62,20 +79,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let xDiff = xStart - event.touches[0].clientX;
         if (Math.abs(xDiff) > 50) { // Sensibilidade ao toque
-            clearInterval(slideInterval); // Pausa o carrossel automático
+            clearInterval(slideInterval); // Pausa o carrossel automático ao deslizar
             if (xDiff > 0) {
-                currentSlide = (currentSlide + 1) % slides.length; // Próximo slide
+                nextSlide(); // Próximo slide
             } else {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Slide anterior
+                prevSlide(); // Slide anterior
             }
-            showSlide(currentSlide);
             xStart = null;
         }
     }
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Inicializar contagem de tempo desde 27/09/2024 às 00:00 (horário de Brasília)
+    // Inicializar contador de tempo desde 27/09/2024 às 00:00 (horário de Brasília)
     const startDate = new Date("2024-09-27T00:00:00-03:00"); // Offset -3:00 para horário de Brasília
 
     function updateCounter() {

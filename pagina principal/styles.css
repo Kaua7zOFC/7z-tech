@@ -221,6 +221,35 @@ nav ul li a:hover {
       }
 }
 
+/* Estilo dos botões de navegação no carrossel */
+.slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 10;
+      transition: background-color 0.3s;
+}
+
+.slide-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+      left: 10px;
+}
+
+.next-btn {
+      right: 10px;
+}
+
+
 /* Estilo do Contador */
 .time-counter {
       text-align: center;
@@ -231,13 +260,14 @@ nav ul li a:hover {
       font-size: 1.2em;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .time-counter h2 {
+}
+
+.time-counter h2 {
       color: #e74c3c;
       margin-bottom: 10px;
-  }
-  #counter {
+}
+
+#counter {
       font-weight: bold;
       color: #3f0d12;
-  }
-  
+}
