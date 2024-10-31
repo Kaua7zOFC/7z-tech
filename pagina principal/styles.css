@@ -160,3 +160,84 @@ nav ul li a:hover {
             /* Ajustar o padding em telas pequenas */
       }
 }
+
+/* Centralização e integração do slideshow */
+.slideshow-container {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      height: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para cada slide */
+.slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+      border-radius: 15px;
+}
+
+/* Slide ativo */
+.slide.active {
+      opacity: 1;
+}
+
+/* Títulos e parágrafos dentro do slideshow */
+.slideshow-container h1,
+.slideshow-container p {
+      color: #333;
+      font-weight: bold;
+      margin: 10px;
+      text-shadow: none;
+}
+
+.slideshow-container h1 {
+      color: #e74c3c;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+}
+
+.slideshow-container p {
+      font-size: 1.1em;
+      color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+      .slideshow-container {
+            width: 90%;
+            height: 300px;
+      }
+}
+
+/* Estilo do Contador */
+.time-counter {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 1.2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .time-counter h2 {
+      color: #e74c3c;
+      margin-bottom: 10px;
+  }
+  #counter {
+      font-weight: bold;
+      color: #3f0d12;
+  }
+  
